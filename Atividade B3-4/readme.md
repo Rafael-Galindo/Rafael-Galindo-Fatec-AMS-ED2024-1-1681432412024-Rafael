@@ -7,7 +7,7 @@
 - Giovanni Montteiro
 - Vitor Tamais Fischer
 
-Data: [**/**/****]
+Data: [********]
 
 
 ## Descrição de Negócio
