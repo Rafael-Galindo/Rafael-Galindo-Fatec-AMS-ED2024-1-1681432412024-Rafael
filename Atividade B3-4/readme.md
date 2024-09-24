@@ -35,7 +35,9 @@ Github: Utilizado para controle de versão e colaboração, permitindo que a equ
 
 
 Código em Python:
+
 import random
+
 import time
 
  Função iterativa para calcular o tempo total de preparo dos pedidos
