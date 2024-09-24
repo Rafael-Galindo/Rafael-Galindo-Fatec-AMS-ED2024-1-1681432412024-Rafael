@@ -12,7 +12,7 @@ Data: [##-##-####]
 
 ## Descrição de Negócio
 
-O problema que abordaremos consiste em desenvolver uma solução computacional para simular o funcionamento de um sistema de gestão de filas em um restaurante, onde diferentes processos são gerenciados com base no estado de atendimento. A eficiência do atendimento será otimizada utilizando laços de repetição e recursividade, permitindo que o sistema escale adequadamente à medida que o número de pedidos cresce.
+O problema que abordaremos consiste em desenvolver uma solução computacional para simular o funcionamento de um sistema de gestão de filas em um restaurante, onde diferentes processos são gerenciados com base no estado de atendimento. A eficiência do atendimento será otimizada utilizando laços de repetição e iteração, permitindo que o sistema escale adequadamente à medida que o número de pedidos cresce.
 
 
 ## Macro Solução
@@ -23,7 +23,7 @@ A solução envolve três laços de repetição para os seguintes processos:
 2. **Consulta de menu**: Um laço `for` para iterar sobre os itens do menu, calculando o tempo de preparo de cada pedido.
 3. **Verificação de estoque**: Um laço `do-while` que continua verificando os níveis de estoque até que seja possível preparar o próximo pedido.
 
-Além disso, uma função recursiva será usada para calcular o tempo total de atendimento, levando em conta a recursividade para ajustar o tempo de espera de acordo com a complexidade dos pedidos.
+Além disso, utilizar uma função de iteração que será usada para calcular o tempo total de atendimento, levando em conta a iteração para ajustar o tempo de espera de acordo com a complexidade dos pedidos
 
 
 ## Ferramentas e Linguagens
@@ -32,110 +32,98 @@ Além disso, uma função recursiva será usada para calcular o tempo total de a
 - **Ferramentas:** GCC (GNU Compiler Collection) para compilar o código, e Github para controle de versão e colaboração.
 
 
-Código em C:
+Código em Python:
+import random
+import time
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+# Função iterativa para calcular o tempo total de preparo dos pedidos
+def calcular_tempo_total(pedidos):
+    total = 0
+    for tempo in pedidos:
+        total += tempo
+    return total
 
-// Função recursiva para calcular o tempo total de preparo dos pedidos
-int calcular_tempo_total(int pedidos[], int n) {
+# Função para ajustar o tempo de atendimento com base na complexidade dos pedidos
+def ajustar_tempo(pedidos):
+    total_ajustado = 0
+    for tempo in pedidos:
+        # Complexidade ajustada: quanto maior o tempo, mais complexo
+        # Adiciona um fator de ajuste ao tempo de espera baseado na complexidade
+        if tempo > 20:
+            fator_ajuste = 10  # Ajuste para pedidos mais complexos
+        elif tempo > 10:
+            fator_ajuste = 5   # Ajuste médio
+        else:
+            fator_ajuste = 2   # Ajuste para pedidos menos complexos
 
-    // Caso base: se não houver pedidos, o tempo total é zero
-    if (n == 0) {
-        return 0;
-    }
-    
-    // Recursivamente soma o tempo do último pedido ao total dos anteriores
-    return pedidos[n - 1] + calcular_tempo_total(pedidos, n - 1);
-}
+        total_ajustado += tempo + fator_ajuste
+    return total_ajustado
 
-// Função para verificar estoque de forma iterativa
-int verificar_estoque(int estoque[], int tamanho) {
-    int item = 0;
-    
-    // Itera sobre o estoque para encontrar um item disponível
-    while (item < tamanho) {
-        printf("Verificando estoque do item %d... ", item + 1);
-        if (estoque[item] > 0) {
-            printf("Item disponível! Processando pedido...\n");
-            return item; 
-            
-            // Retorna o índice do item disponível
-        } else {
-            printf("Estoque esgotado. Verificando próximo item.\n");
-        }
-        item++;
-    }
-    
-    // Retorna -1 se nenhum item estiver disponível
-    
-    return -1;
-}
+# Função para verificar estoque de forma iterativa
+def verificar_estoque(estoque):
+    item = 0
+    while item < len(estoque):
+        print(f"Verificando estoque do item {item + 1}... ", end="")
+        if estoque[item] > 0:
+            print("Item disponível! Processando pedido...")
+            return item  # Retorna o índice do item disponível
+        else:
+            print("Estoque esgotado. Verificando próximo item.")
+        item += 1
+    return -1
 
-int main() {
-    srand(time(0)); 
-    
-    // Inicializa o gerador de números aleatórios
-    int num_pedidos = 10; 
-    
-    // Número de pedidos
-    int pedidos[num_pedidos];
-    int menu[5] = {5, 10, 15, 20, 25};
-    // Tempos de preparo do menu
-    int estoque[5] = {2, 0, 5, 1, 3}; 
-    // Estoque dos itens do menu
+# Função principal
+def main():
+    random.seed(time.time())  # Inicializa o gerador de números aleatórios
 
-    // 1. Simulando o atendimento de pedidos em uma fila (laço while)
-    
-    printf("Processando fila de pedidos:\n");
-    int i = 0;
-    while (i < num_pedidos) {
-        pedidos[i] = menu[rand() % 5]; 
-        
-        // Atribui tempos de preparo aleatórios do menu
-        printf("Pedido %d: tempo de preparo = %d minutos\n", i + 1, pedidos[i]);
-        i++;
-    }
+    num_pedidos = int(input("Digite o número de pedidos: "))
 
-    // 2. Verificando o menu (laço for)
-    
-    printf("\nVerificando o menu:\n");
-    for (int j = 0; j < 5; j++) {
-        printf("Item %d: tempo de preparo = %d minutos\n", j + 1, menu[j]);
-    }
+    pedidos = [0] * num_pedidos
+    menu = []
+    estoque = []
 
-    // 3. Verificando estoque iterativamente usando função com laço while
-    
-    printf("\nVerificando estoque para o próximo pedido:\n");
-    int item_disponivel = verificar_estoque(estoque, 5);
-    if (item_disponivel == -1) {
-        printf("Nenhum item disponível no estoque.\n");
-    }
+    # Entrada de dados do menu
+    print("\nDigite os tempos de preparo dos 5 itens do menu (em minutos):")
+    for i in range(5):
+        tempo_preparo = int(input(f"Tempo de preparo do item {i + 1}: "))
+        menu.append(tempo_preparo)
 
-    // 4. Calculando o tempo total de preparo usando a função recursiva
-    
-    int total_tempo = calcular_tempo_total(pedidos, num_pedidos);
-    printf("\nTempo total de preparo dos pedidos: %d minutos\n", total_tempo);
+    # Entrada de dados do estoque
+    print("\nDigite as quantidades em estoque dos 5 itens do menu:")
+    for i in range(5):
+        quantidade_estoque = int(input(f"Quantidade em estoque do item {i + 1}: "))
+        estoque.append(quantidade_estoque)
 
-    return 0;
-}
+    # 1. Simulando o atendimento de pedidos em uma fila (laço while)
+    print("\nProcessando fila de pedidos:")
+    i = 0
+    while i < num_pedidos:
+        pedidos[i] = random.choice(menu)  # Atribui tempos de preparo aleatórios do menu
+        print(f"Pedido {i + 1}: tempo de preparo = {pedidos[i]} minutos")
+        i += 1
 
+    # 2. Verificando o menu (laço for)
+    print("\nVerificando o menu:")
+    for j, tempo in enumerate(menu):
+        print(f"Item {j + 1}: tempo de preparo = {tempo} minutos")
 
+    # 3. Verificando estoque iterativamente usando função com laço while
+    print("\nVerificando estoque para o próximo pedido:")
+    item_disponivel = verificar_estoque(estoque)
+    if item_disponivel == -1:
+        print("Nenhum item disponível no estoque.")
 
-Explicação do Código:
-Laço de repetição while:
+    # 4. Calculando o tempo total de preparo usando a função iterativa
+    total_tempo = calcular_tempo_total(pedidos)
+    print(f"\nTempo total de preparo dos pedidos (sem ajustes): {total_tempo} minutos")
 
-1.Processa uma fila de 5 pedidos, onde os tempos de preparo são atribuídos aleatoriamente com base no menu.
+    # 5. Ajustando o tempo de atendimento com base na complexidade dos pedidos
+    total_tempo_ajustado = ajustar_tempo(pedidos)
+    print(f"Tempo total de preparo ajustado com complexidade: {total_tempo_ajustado} minutos")
 
-2.Laço de repetição for:
-Exibe o tempo de preparo de cada item do menu.
+if __name__ == "__main__":
+    main()
 
-3.Laço de repetição do-while:
-Verifica o estoque dos itens. Continua até encontrar um item com estoque disponível.
-
-4.Função recursiva calcular_tempo_total:
-Calcula o tempo total de preparo somando o tempo de cada pedido de forma recursiva.
 
 Saída Exemplo:
 
