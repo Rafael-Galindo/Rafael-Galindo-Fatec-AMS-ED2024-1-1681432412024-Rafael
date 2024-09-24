@@ -157,3 +157,21 @@ def main():
 if __name__ == "__main__":
     main()
 
+
+Explicação do Código
+Função calcular_tempo_total(pedidos): Esta função recebe uma lista de tempos de preparo dos pedidos e calcula o tempo total somando todos os elementos. Utiliza um laço for para iterar sobre cada pedido e acumular o tempo.
+
+Função verificar_estoque(estoque): Esta função percorre a lista de estoques para verificar a disponibilidade dos itens. Utiliza um laço for para iterar através dos itens e imprimir o status de cada um, informando se o item está disponível ou esgotado. Retorna o índice do primeiro item disponível ou -1 se nenhum estiver disponível.
+
+Função main(): Esta é a função principal que gerencia a execução do programa. Solicita a entrada do usuário para o número de pedidos, os tempos de preparo do menu e as quantidades em estoque. Em seguida, simula o processamento dos pedidos e exibe informações sobre o menu, o estoque e o tempo total de preparo dos pedidos.
+
+Ferramentas e Linguagens Utilizadas
+Linguagem de Programação: Python
+Escolhemos a linguagem Python pela sua simplicidade e expressividade, além de contar com diversas bibliotecas que facilitam a manipulação de dados e a realização de análises.
+
+Ferramentas:
+
+Python 3.x: Para o desenvolvimento da aplicação.
+GitHub: Utilizado para controle de versão e colaboração entre os membros da equipe.
+Iteratividade e Desempenho:
+O sistema implementa três pontos principais de laços de repetição para garantir o processamento eficiente dos pedidos. O tempo de atendimento é ajustado iterativamente para se adequar à complexidade dos pedidos, proporcionando uma solução escalável e eficiente para o restaurante. A abordagem permite não apenas gerenciar o atendimento em tempo real, mas também analisar o desempenho dos algoritmos utilizados, identificando oportunidades para futuras otimizações.
