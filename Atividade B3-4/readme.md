@@ -7,6 +7,7 @@ Giovanni Montteiro
 Vitor Tamais Fischer
 Curso: ADS - Análise e Desenvolvimento de Sistemas
 Disciplina: Estrutura de Dados
+
 Data: [## - ## - ####]
 
 Descrição do Negócio
