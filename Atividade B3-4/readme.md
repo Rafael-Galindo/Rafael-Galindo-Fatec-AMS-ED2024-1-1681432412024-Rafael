@@ -109,7 +109,7 @@ if __name__ == "__main__":
 
 
 
-Explicação do Código
+###Explicação do Código
 Função calcular_tempo_total(pedidos): Esta função recebe uma lista de tempos de preparo dos pedidos e calcula o tempo total somando todos os elementos. Utiliza um laço for para iterar sobre cada pedido e acumular o tempo.
 
 Função verificar_estoque(estoque): Esta função percorre a lista de estoques para verificar a disponibilidade dos itens. Utiliza um laço for para iterar através dos itens e imprimir o status de cada um, informando se o item está disponível ou esgotado. Retorna o índice do primeiro item disponível ou -1 se nenhum estiver disponível.
