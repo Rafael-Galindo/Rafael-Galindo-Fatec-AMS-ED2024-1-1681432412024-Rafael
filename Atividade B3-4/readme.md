@@ -1,35 +1,32 @@
-# Análise de Desempenho de Algoritmos
+Análise de Desempenho de Algoritmos
+Equipe:
 
-**Equipe:**
-
-- Rafael Willian Galindo Neto
-- Murilo Grillo Bastos
-- Giovanni Montteiro
-- Vitor Tamais Fischer
-
+Rafael Willian Galindo Neto
+Murilo Grillo Bastos
+Giovanni Montteiro
+Vitor Tamais Fischer
 Data: [##-##-####]
 
+Descrição de Negócio
+O problema que abordaremos consiste em desenvolver uma solução computacional para simular o funcionamento de um sistema de gestão de filas em um restaurante, onde diferentes processos são gerenciados com base no estado de atendimento. O objetivo é otimizar a eficiência do atendimento utilizando laços de repetição e técnicas de iteração, permitindo que o sistema escale adequadamente à medida que o número de pedidos cresce. A complexidade do atendimento é ajustada de acordo com o tempo de preparo dos pedidos, simulando um ambiente realista onde a complexidade influencia diretamente o tempo de espera dos clientes.
 
-## Descrição de Negócio
+Macro Solução
+A solução foi desenvolvida em C, envolvendo a criação de um programa que utiliza três laços de repetição para controlar diferentes etapas do atendimento e um ajuste iterativo para o tempo de espera:
 
-O problema que abordaremos consiste em desenvolver uma solução computacional para simular o funcionamento de um sistema de gestão de filas em um restaurante, onde diferentes processos são gerenciados com base no estado de atendimento. A eficiência do atendimento será otimizada utilizando laços de repetição e iteração, permitindo que o sistema escale adequadamente à medida que o número de pedidos cresce.
+Fila de Atendimento (Laço While): Um laço while processa a fila de pedidos, atribuindo tempos de preparo aleatórios baseados nos itens do menu. Esse laço simula o fluxo contínuo de atendimento de pedidos, onde cada pedido é processado sequencialmente até que todos os pedidos na fila sejam atendidos.
 
+Consulta de Menu (Laço For): Um laço for percorre os itens do menu, listando os tempos de preparo de cada item. Essa iteração é essencial para visualizar o tempo necessário para preparar cada pedido, auxiliando na tomada de decisão durante o atendimento.
 
-## Macro Solução
+Verificação de Estoque (Laço While Iterativo): Uma função iterativa verifica o estoque de forma contínua até que um item disponível seja encontrado. O laço verifica item por item, simulando um processo onde o estoque é checado antes de preparar um pedido, garantindo que apenas os itens disponíveis sejam processados.
 
-A solução envolve três laços de repetição para os seguintes processos:
+Ajuste de Tempo de Atendimento (Função de Iteração com Ajuste de Complexidade): Após o cálculo do tempo total de preparo, uma função iterativa ajusta o tempo de espera com base na complexidade de cada pedido. Itens com tempos de preparo mais altos recebem um ajuste adicional, simulando um aumento no tempo de atendimento devido à complexidade, o que é comum em ambientes reais onde pedidos mais demorados impactam o tempo total de serviço.
 
-1. **Fila de atendimento**: Um laço `while` que processa pedidos até que todos sejam atendidos.
-2. **Consulta de menu**: Um laço `for` para iterar sobre os itens do menu, calculando o tempo de preparo de cada pedido.
-3. **Verificação de estoque**: Um laço `do-while` que continua verificando os níveis de estoque até que seja possível preparar o próximo pedido.
+Ferramentas e Linguagens
+Linguagem de Programação: C (escolhida por seu desempenho e controle detalhado de memória, proporcionando uma simulação eficiente e detalhada do sistema de atendimento).
+Ferramentas:
+GCC (GNU Compiler Collection): Utilizado para compilar o código e garantir a execução eficiente do programa.
+Github: Utilizado para controle de versão e colaboração, permitindo que a equipe trabalhe de forma sincronizada no desenvolvimento e ajuste do algoritmo.
 
-Além disso, utilizar uma função de iteração que será usada para calcular o tempo total de atendimento, levando em conta a iteração para ajustar o tempo de espera de acordo com a complexidade dos pedidos
-
-
-## Ferramentas e Linguagens
-
-- **Linguagem de Programação:** C (escolhida por seu desempenho e controle detalhado de memória).
-- **Ferramentas:** GCC (GNU Compiler Collection) para compilar o código, e Github para controle de versão e colaboração.
 
 
 Código em Python:
