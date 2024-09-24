@@ -39,6 +39,44 @@ Para atender a essas necessidades, o sistema será implementado utilizando três
 
 4. **Cálculo do Tempo Total de Atendimento (Função Iterativa):** Uma função iterativa calcula o tempo total de atendimento, ajustando o tempo de espera de acordo com a complexidade de cada pedido. A função percorre todos os pedidos, somando os tempos de preparo e ajustando conforme necessário para refletir a complexidade.
 
+### Ferramentas e Linguagens Utilizadas
+
+- **Linguagem de Programação:** Python  
+  Escolhemos a linguagem Python pela sua simplicidade e expressividade, além de contar com diversas bibliotecas que facilitam a manipulação de dados e a realização de análises.
+
+- **Ferramentas:**
+  - **Python 3.x:** Para o desenvolvimento da aplicação.
+  - **GitHub:** Utilizado para controle de versão e colaboração entre os membros da equipe.
+
+### Iteratividade e Desempenho
+
+O sistema implementa três pontos principais de laços de repetição para garantir o processamento eficiente dos pedidos. O tempo de atendimento é ajustado iterativamente para se adequar à complexidade dos pedidos, proporcionando uma solução escalável e eficiente para o restaurante. A abordagem permite não apenas gerenciar o atendimento em tempo real, mas também analisar o desempenho dos algoritmos utilizados, identificando oportunidades para futuras otimizações.
+
+### Explicação do Código
+
+O código é um sistema simples para gerenciar pedidos em um restaurante, utilizando Python. Ele inclui funções para calcular o tempo total de preparo dos pedidos e verificar a disponibilidade dos itens no estoque. A seguir, explicamos as principais funções do código:
+
+- **Função `calcular_tempo_total(pedidos):`**
+  - **Descrição:** Esta função recebe uma lista de tempos de preparo dos pedidos e calcula o tempo total somando todos os elementos.
+  - **Funcionamento:** Utiliza um laço `for` para iterar sobre cada elemento da lista `pedidos`, acumulando o tempo em uma variável `total`, que é retornada ao final da função.
+
+- **Função `verificar_estoque(estoque):`**
+  - **Descrição:** Esta função percorre a lista de estoques para verificar a disponibilidade dos itens.
+  - **Funcionamento:** Utiliza um laço `for` que itera através dos índices dos itens no estoque. Para cada item, imprime o status de disponibilidade e retorna o índice do primeiro item disponível ou -1 se nenhum item estiver disponível.
+
+- **Função `main():`**
+  - **Descrição:** Esta é a função principal que gerencia a execução do programa.
+  - **Funcionamento:** A função solicita a entrada do usuário para o número de pedidos, os tempos de preparo do menu e as quantidades em estoque. Em seguida, simula o processamento dos pedidos, verifica o menu e o estoque, e calcula o tempo total de preparo utilizando as funções anteriormente descritas.
+
+### Resumo do Fluxo do Programa
+
+1. O usuário é solicitado a inserir o número de pedidos e os tempos de preparo dos itens do menu.
+2. O estoque dos itens também é solicitado.
+3. O sistema processa os pedidos gerando tempos de preparo aleatórios a partir do menu.
+4. O sistema verifica a disponibilidade dos itens no estoque.
+5. Finalmente, o tempo total de preparo dos pedidos é calculado e exibido.
+
+
 
 ### Código em Python
 
@@ -106,41 +144,4 @@ def main():
 if __name__ == "__main__":
     main()´´´
 
-
-### Ferramentas e Linguagens Utilizadas
-
-- **Linguagem de Programação:** Python  
-  Escolhemos a linguagem Python pela sua simplicidade e expressividade, além de contar com diversas bibliotecas que facilitam a manipulação de dados e a realização de análises.
-
-- **Ferramentas:**
-  - **Python 3.x:** Para o desenvolvimento da aplicação.
-  - **GitHub:** Utilizado para controle de versão e colaboração entre os membros da equipe.
-
-### Iteratividade e Desempenho
-
-O sistema implementa três pontos principais de laços de repetição para garantir o processamento eficiente dos pedidos. O tempo de atendimento é ajustado iterativamente para se adequar à complexidade dos pedidos, proporcionando uma solução escalável e eficiente para o restaurante. A abordagem permite não apenas gerenciar o atendimento em tempo real, mas também analisar o desempenho dos algoritmos utilizados, identificando oportunidades para futuras otimizações.
-
-### Explicação do Código
-
-O código é um sistema simples para gerenciar pedidos em um restaurante, utilizando Python. Ele inclui funções para calcular o tempo total de preparo dos pedidos e verificar a disponibilidade dos itens no estoque. A seguir, explicamos as principais funções do código:
-
-- **Função `calcular_tempo_total(pedidos):`**
-  - **Descrição:** Esta função recebe uma lista de tempos de preparo dos pedidos e calcula o tempo total somando todos os elementos.
-  - **Funcionamento:** Utiliza um laço `for` para iterar sobre cada elemento da lista `pedidos`, acumulando o tempo em uma variável `total`, que é retornada ao final da função.
-
-- **Função `verificar_estoque(estoque):`**
-  - **Descrição:** Esta função percorre a lista de estoques para verificar a disponibilidade dos itens.
-  - **Funcionamento:** Utiliza um laço `for` que itera através dos índices dos itens no estoque. Para cada item, imprime o status de disponibilidade e retorna o índice do primeiro item disponível ou -1 se nenhum item estiver disponível.
-
-- **Função `main():`**
-  - **Descrição:** Esta é a função principal que gerencia a execução do programa.
-  - **Funcionamento:** A função solicita a entrada do usuário para o número de pedidos, os tempos de preparo do menu e as quantidades em estoque. Em seguida, simula o processamento dos pedidos, verifica o menu e o estoque, e calcula o tempo total de preparo utilizando as funções anteriormente descritas.
-
-### Resumo do Fluxo do Programa
-
-1. O usuário é solicitado a inserir o número de pedidos e os tempos de preparo dos itens do menu.
-2. O estoque dos itens também é solicitado.
-3. O sistema processa os pedidos gerando tempos de preparo aleatórios a partir do menu.
-4. O sistema verifica a disponibilidade dos itens no estoque.
-5. Finalmente, o tempo total de preparo dos pedidos é calculado e exibido.
 
