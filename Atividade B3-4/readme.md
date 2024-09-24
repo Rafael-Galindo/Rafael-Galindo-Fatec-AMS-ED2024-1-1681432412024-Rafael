@@ -125,24 +125,3 @@ if __name__ == "__main__":
     main()
 
 
-Saída Exemplo:
-
-Processando fila de pedidos:
-Pedido 1: tempo de preparo = 30 minutos
-Pedido 2: tempo de preparo = 20 minutos
-Pedido 3: tempo de preparo = 25 minutos
-Pedido 4: tempo de preparo = 15 minutos
-Pedido 5: tempo de preparo = 10 minutos
-
-Verificando o menu:
-Item 1: tempo de preparo = 10 minutos
-Item 2: tempo de preparo = 15 minutos
-Item 3: tempo de preparo = 20 minutos
-Item 4: tempo de preparo = 25 minutos
-Item 5: tempo de preparo = 30 minutos
-
-Verificando estoque para o próximo pedido:
-Verificando estoque do item 1... Item disponível! Processando pedido...
-
-Tempo total de preparo dos pedidos: 100 minutos
-
