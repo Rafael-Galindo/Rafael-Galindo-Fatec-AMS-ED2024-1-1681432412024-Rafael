@@ -36,14 +36,16 @@ Código em Python:
 import random
 import time
 
-# Função iterativa para calcular o tempo total de preparo dos pedidos
+ Função iterativa para calcular o tempo total de preparo dos pedidos
+ 
 def calcular_tempo_total(pedidos):
     total = 0
     for tempo in pedidos:
         total += tempo
     return total
 
-# Função para ajustar o tempo de atendimento com base na complexidade dos pedidos
+Função para ajustar o tempo de atendimento com base na complexidade dos pedidos
+
 def ajustar_tempo(pedidos):
     total_ajustado = 0
     for tempo in pedidos:
@@ -59,7 +61,8 @@ def ajustar_tempo(pedidos):
         total_ajustado += tempo + fator_ajuste
     return total_ajustado
 
-# Função para verificar estoque de forma iterativa
+ Função para verificar estoque de forma iterativa
+ 
 def verificar_estoque(estoque):
     item = 0
     while item < len(estoque):
@@ -72,7 +75,8 @@ def verificar_estoque(estoque):
         item += 1
     return -1
 
-# Função principal
+Função principal
+
 def main():
     random.seed(time.time())  # Inicializa o gerador de números aleatórios
 
@@ -82,19 +86,22 @@ def main():
     menu = []
     estoque = []
 
-    # Entrada de dados do menu
+     Entrada de dados do menu
+     
     print("\nDigite os tempos de preparo dos 5 itens do menu (em minutos):")
     for i in range(5):
         tempo_preparo = int(input(f"Tempo de preparo do item {i + 1}: "))
         menu.append(tempo_preparo)
 
-    # Entrada de dados do estoque
+    Entrada de dados do estoque
+    
     print("\nDigite as quantidades em estoque dos 5 itens do menu:")
     for i in range(5):
         quantidade_estoque = int(input(f"Quantidade em estoque do item {i + 1}: "))
         estoque.append(quantidade_estoque)
 
-    # 1. Simulando o atendimento de pedidos em uma fila (laço while)
+     1. Simulando o atendimento de pedidos em uma fila (laço while)
+     
     print("\nProcessando fila de pedidos:")
     i = 0
     while i < num_pedidos:
@@ -102,22 +109,26 @@ def main():
         print(f"Pedido {i + 1}: tempo de preparo = {pedidos[i]} minutos")
         i += 1
 
-    # 2. Verificando o menu (laço for)
+    2. Verificando o menu (laço for)
+    
     print("\nVerificando o menu:")
     for j, tempo in enumerate(menu):
         print(f"Item {j + 1}: tempo de preparo = {tempo} minutos")
 
-    # 3. Verificando estoque iterativamente usando função com laço while
+     3. Verificando estoque iterativamente usando função com laço while
+     
     print("\nVerificando estoque para o próximo pedido:")
     item_disponivel = verificar_estoque(estoque)
     if item_disponivel == -1:
         print("Nenhum item disponível no estoque.")
 
-    # 4. Calculando o tempo total de preparo usando a função iterativa
+     4. Calculando o tempo total de preparo usando a função iterativa
+     
     total_tempo = calcular_tempo_total(pedidos)
     print(f"\nTempo total de preparo dos pedidos (sem ajustes): {total_tempo} minutos")
 
-    # 5. Ajustando o tempo de atendimento com base na complexidade dos pedidos
+    5. Ajustando o tempo de atendimento com base na complexidade dos pedidos]
+    
     total_tempo_ajustado = ajustar_tempo(pedidos)
     print(f"Tempo total de preparo ajustado com complexidade: {total_tempo_ajustado} minutos")
 
