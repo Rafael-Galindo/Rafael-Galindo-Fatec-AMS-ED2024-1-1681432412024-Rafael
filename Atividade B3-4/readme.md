@@ -1,6 +1,7 @@
 Análise de Desempenho de Algoritmos
 
 Equipe:
+
 Rafael Willian Galindo Neto
 
 Murilo Grillo Bastos
