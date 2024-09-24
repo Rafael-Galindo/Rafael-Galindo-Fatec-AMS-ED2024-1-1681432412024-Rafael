@@ -40,10 +40,12 @@ Código em C:
 
 // Função recursiva para calcular o tempo total de preparo dos pedidos
 int calcular_tempo_total(int pedidos[], int n) {
+
     // Caso base: se não houver pedidos, o tempo total é zero
     if (n == 0) {
         return 0;
     }
+    
     // Recursivamente soma o tempo do último pedido ao total dos anteriores
     return pedidos[n - 1] + calcular_tempo_total(pedidos, n - 1);
 }
@@ -51,17 +53,21 @@ int calcular_tempo_total(int pedidos[], int n) {
 // Função para verificar estoque de forma iterativa
 int verificar_estoque(int estoque[], int tamanho) {
     int item = 0;
+    
     // Itera sobre o estoque para encontrar um item disponível
     while (item < tamanho) {
         printf("Verificando estoque do item %d... ", item + 1);
         if (estoque[item] > 0) {
             printf("Item disponível! Processando pedido...\n");
-            return item;  // Retorna o índice do item disponível
+            return item; 
+            
+            // Retorna o índice do item disponível
         } else {
             printf("Estoque esgotado. Verificando próximo item.\n");
         }
         item++;
     }
+    
     // Retorna -1 se nenhum item estiver disponível
     return -1;
 }
