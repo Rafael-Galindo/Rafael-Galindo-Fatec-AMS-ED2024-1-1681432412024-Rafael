@@ -73,29 +73,39 @@ int verificar_estoque(int estoque[], int tamanho) {
 }
 
 int main() {
-    srand(time(0)); // Inicializa o gerador de números aleatórios
-
-    int num_pedidos = 10; // Número de pedidos
+    srand(time(0)); 
+    
+    // Inicializa o gerador de números aleatórios
+    int num_pedidos = 10; 
+    
+    // Número de pedidos
     int pedidos[num_pedidos];
-    int menu[5] = {5, 10, 15, 20, 25}; // Tempos de preparo do menu
-    int estoque[5] = {2, 0, 5, 1, 3}; // Estoque dos itens do menu
+    int menu[5] = {5, 10, 15, 20, 25};
+    // Tempos de preparo do menu
+    int estoque[5] = {2, 0, 5, 1, 3}; 
+    // Estoque dos itens do menu
 
     // 1. Simulando o atendimento de pedidos em uma fila (laço while)
+    
     printf("Processando fila de pedidos:\n");
     int i = 0;
     while (i < num_pedidos) {
-        pedidos[i] = menu[rand() % 5]; // Atribui tempos de preparo aleatórios do menu
+        pedidos[i] = menu[rand() % 5]; 
+        
+        // Atribui tempos de preparo aleatórios do menu
         printf("Pedido %d: tempo de preparo = %d minutos\n", i + 1, pedidos[i]);
         i++;
     }
 
     // 2. Verificando o menu (laço for)
+    
     printf("\nVerificando o menu:\n");
     for (int j = 0; j < 5; j++) {
         printf("Item %d: tempo de preparo = %d minutos\n", j + 1, menu[j]);
     }
 
     // 3. Verificando estoque iterativamente usando função com laço while
+    
     printf("\nVerificando estoque para o próximo pedido:\n");
     int item_disponivel = verificar_estoque(estoque, 5);
     if (item_disponivel == -1) {
@@ -103,6 +113,7 @@ int main() {
     }
 
     // 4. Calculando o tempo total de preparo usando a função recursiva
+    
     int total_tempo = calcular_tempo_total(pedidos, num_pedidos);
     printf("\nTempo total de preparo dos pedidos: %d minutos\n", total_tempo);
 
