@@ -69,6 +69,7 @@ int verificar_estoque(int estoque[], int tamanho) {
     }
     
     // Retorna -1 se nenhum item estiver disponível
+    
     return -1;
 }
 
