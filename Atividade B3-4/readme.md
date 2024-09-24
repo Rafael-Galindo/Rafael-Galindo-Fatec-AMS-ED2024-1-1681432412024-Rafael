@@ -1,10 +1,14 @@
 Análise de Desempenho de Algoritmos
-Equipe:
 
+Equipe:
 Rafael Willian Galindo Neto
+
 Murilo Grillo Bastos
+
 Giovanni Montteiro
+
 Vitor Tamais Fischer
+
 Data: [##-##-####]
 
 Descrição de Negócio
