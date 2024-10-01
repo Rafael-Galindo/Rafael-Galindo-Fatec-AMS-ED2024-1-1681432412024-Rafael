@@ -1,80 +1,59 @@
+# Sistema de Gerenciamento de Pedidos
 
-# Análise de Desempenho de Algoritmos - Proposta de Solução Computacional
-
-**Equipe:**
-
+## Componentes da Equipe
 - Rafael Willian Galindo Neto
-- Murilo Grillo Bastos
-- Giovanni Montteiro
-- Vitor Tamais Fischer
+- [Nome do Outro Integrante 1]
+- [Nome do Outro Integrante 2]
+- [Nome do Outro Integrante 3]
 
-**Curso:** ADS - Análise e Desenvolvimento de Sistemas  
-**Disciplina:** Estrutura de Dados  
-**Data:** [## - ## - ####]  
+## Descrição de Negócio
+O Sistema de Gerenciamento de Pedidos foi desenvolvido para otimizar o atendimento ao cliente em um ambiente de restaurante. A proposta é permitir que os operadores do restaurante gerenciem pedidos de forma eficiente, garantindo a verificação do estoque e o cálculo do tempo de preparo dos itens do menu. O sistema é interativo e permite a entrada de dados em tempo real, proporcionando uma experiência fluida tanto para os operadores quanto para os clientes.
 
-## Descrição do Negócio
+## Requisitos do Sistema
+### Funcionais
+1. **Entrada de Dados:**
+   - O sistema deve permitir que o usuário insira o número de pedidos, os tempos de preparo dos itens do menu e as quantidades disponíveis em estoque.
+2. **Processamento de Pedidos:**
+   - O sistema deve gerar pedidos aleatórios a partir do menu e calcular o tempo total de preparo.
+3. **Verificação de Estoque:**
+   - O sistema deve verificar se os itens necessários estão disponíveis em estoque antes de processar os pedidos.
+4. **Atualização de Estoque:**
+   - O sistema deve atualizar a quantidade em estoque após cada pedido ser processado.
+5. **Continuação de Pedidos:**
+   - O sistema deve permitir que o usuário continue processando pedidos até que o estoque se esgote ou que o usuário decida parar.
 
-O projeto envolve a criação de uma solução computacional para otimizar o sistema de gestão de atendimento de um restaurante, que enfrenta desafios na organização e análise de pedidos durante o atendimento. A necessidade é desenvolver um programa que simule a fila de atendimento, verificação do menu e controle de estoque, além de calcular o tempo total de preparo dos pedidos.
+### Não Funcionais
+1. **Usabilidade:**
+   - O sistema deve ser intuitivo e fácil de usar para o operador.
+2. **Desempenho:**
+   - O sistema deve processar pedidos rapidamente, mesmo com múltiplos pedidos em sequência.
+3. **Confiabilidade:**
+   - O sistema deve funcionar de forma consistente e correta, sem falhas que comprometam o atendimento.
 
-O objetivo principal é melhorar a eficiência do atendimento, ajustando os tempos de espera de acordo com a complexidade dos pedidos e fornecer uma base para análise de desempenho dos algoritmos utilizados.
+## Resumo do Código
+O código implementa um sistema de gerenciamento de pedidos utilizando Python. Ele inclui as seguintes funcionalidades:
 
-### Requisitos do Sistema:
-
-- **Gestão de Pedidos:** Processamento e organização dos pedidos, com controle dos tempos de preparo e gestão de fila.
-- **Verificação de Menu:** Análise do tempo de preparo dos itens do menu para melhor gerenciamento dos recursos de cozinha.
-- **Controle de Estoque:** Garantia de que os itens necessários estão disponíveis para o preparo dos pedidos.
-- **Cálculo do Tempo de Atendimento:** Ajustar o tempo total de atendimento conforme a complexidade dos pedidos utilizando iterações.
+1. **Entrada de Dados:** O usuário é solicitado a informar o número de pedidos, os tempos de preparo dos itens do menu e as quantidades disponíveis em estoque.
+2. **Processamento de Pedidos:** O sistema gera pedidos aleatórios, calcula o tempo de preparo total e verifica a disponibilidade dos itens no estoque.
+3. **Verificação de Estoque:** O sistema checa se os itens necessários estão disponíveis antes de processar cada pedido.
+4. **Atualização de Estoque:** Após o processamento de um pedido, o estoque é atualizado para refletir a quantidade disponível.
+5. **Repetição:** O sistema permite ao usuário continuar processando pedidos até que o estoque esgote ou o usuário decida parar.
 
 ## Macro Solução
+A solução proposta consiste em um sistema que possui as seguintes características:
 
-Para atender a essas necessidades, o sistema será implementado utilizando três laços de repetição, garantindo que os processos de atendimento sejam realizados de forma eficiente. A seguir, detalhamos os principais componentes da solução:
+- **Entrada de Dados:** O sistema solicita ao usuário informações sobre o número de pedidos, tempos de preparo e quantidades em estoque dos itens do menu.
+- **Laços de Repetição:**
+  - **`for` Loop:** Utilizado para calcular o tempo total de preparo dos pedidos e para verificar a disponibilidade de itens no estoque.
+  - **`while` Loop:** Permite que o sistema continue processando pedidos até que o estoque esgote ou o usuário decida parar.
 
-### Estrutura da Solução:
-
-1. **Fila de Atendimento (Laço While):** O sistema simula o atendimento de pedidos em uma fila usando um laço `while`, processando cada pedido sequencialmente até que todos sejam atendidos.
-
-2. **Consulta de Menu (Laço For):** Utiliza-se um laço `for` para iterar sobre os itens do menu, permitindo visualizar os tempos de preparo e ajustar o atendimento conforme necessário.
-
-3. **Verificação de Estoque (Laço While Iterativo):** A verificação do estoque é realizada através de um laço iterativo que garante que apenas os itens disponíveis sejam utilizados, prevenindo atrasos no atendimento devido à falta de produtos.
-
-4. **Cálculo do Tempo Total de Atendimento (Função Iterativa):** Uma função iterativa calcula o tempo total de atendimento, ajustando o tempo de espera de acordo com a complexidade de cada pedido. A função percorre todos os pedidos, somando os tempos de preparo e ajustando conforme necessário para refletir a complexidade.
-
-### Ferramentas e Linguagens Utilizadas
-
-- **Linguagem de Programação:** Python  
-  Escolhemos a linguagem Python pela sua simplicidade e expressividade, além de contar com diversas bibliotecas que facilitam a manipulação de dados e a realização de análises.
-
+## Ferramentas e Linguagens Utilizadas
+- **Linguagem de Programação:** Python
+  - A escolha do Python se deve à sua simplicidade e expressividade, que facilita o desenvolvimento de soluções rápidas e eficientes.
 - **Ferramentas:**
-  - **Python 3.x:** Para o desenvolvimento da aplicação.
-  - **GitHub:** Utilizado para controle de versão e colaboração entre os membros da equipe.
+  - Python 3.x: Para o desenvolvimento da aplicação.
+  - GitHub: Utilizado para controle de versão e colaboração entre os membros da equipe.
 
-### Iteratividade e Desempenho
-
-O sistema implementa três pontos principais de laços de repetição para garantir o processamento eficiente dos pedidos. O tempo de atendimento é ajustado iterativamente para se adequar à complexidade dos pedidos, proporcionando uma solução escalável e eficiente para o restaurante. A abordagem permite não apenas gerenciar o atendimento em tempo real, mas também analisar o desempenho dos algoritmos utilizados, identificando oportunidades para futuras otimizações.
-
-### Explicação do Código
-
-O código é um sistema simples para gerenciar pedidos em um restaurante, utilizando Python. Ele inclui funções para calcular o tempo total de preparo dos pedidos e verificar a disponibilidade dos itens no estoque. A seguir, explicamos as principais funções do código:
-
-- **Função `calcular_tempo_total(pedidos):`**
-  - **Descrição:** Esta função recebe uma lista de tempos de preparo dos pedidos e calcula o tempo total somando todos os elementos.
-  - **Funcionamento:** Utiliza um laço `for` para iterar sobre cada elemento da lista `pedidos`, acumulando o tempo em uma variável `total`, que é retornada ao final da função.
-
-- **Função `verificar_estoque(estoque):`**
-  - **Descrição:** Esta função percorre a lista de estoques para verificar a disponibilidade dos itens.
-  - **Funcionamento:** Utiliza um laço `for` que itera através dos índices dos itens no estoque. Para cada item, imprime o status de disponibilidade e retorna o índice do primeiro item disponível ou -1 se nenhum item estiver disponível.
-
-- **Função `main():`**
-  - **Descrição:** Esta é a função principal que gerencia a execução do programa.
-  - **Funcionamento:** A função solicita a entrada do usuário para o número de pedidos, os tempos de preparo do menu e as quantidades em estoque. Em seguida, simula o processamento dos pedidos, verifica o menu e o estoque, e calcula o tempo total de preparo utilizando as funções anteriormente descritas.
-
-### Resumo do Fluxo do Programa
-
-1. O usuário é solicitado a inserir o número de pedidos e os tempos de preparo dos itens do menu.
-2. O estoque dos itens também é solicitado.
-3. O sistema processa os pedidos gerando tempos de preparo aleatórios a partir do menu.
-4. O sistema verifica a disponibilidade dos itens no estoque.
-5. Finalmente, o tempo total de preparo dos pedidos é calculado e exibido.
 
 
 
