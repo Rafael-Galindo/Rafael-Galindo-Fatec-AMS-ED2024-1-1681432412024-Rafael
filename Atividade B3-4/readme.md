@@ -125,48 +125,7 @@ Para simplificar a função assintótica do nosso projeto, analisaremos as parte
   \]
 
 
-## Pontos de Loop no Código
 
-##1. Laço de Repetição para Processar Pedidos:
-Este laço for processa os pedidos iniciais, gerando um número aleatório de itens e calculando os tempos de preparo.
-
-python
-Copiar código
-for i in range(num_pedidos):
-    item_aleatorio = random.randint(0, 4)  # Seleciona aleatoriamente um item do menu
-    pedido = menu[item_aleatorio]  # Atribui o tempo de preparo do item selecionado
-    pedidos.append(pedido)
-    print(f"Pedido {i + 1}: tempo de preparo = {pedido} minutos")
-Complexidade: 
-𝑂
-(
-𝑛
-)
-O(n), onde 
-𝑛
-n é o número de pedidos.
-2. Laço de Verificação do Estoque:
-Este laço for percorre o estoque para verificar se há itens disponíveis.
-
-python
-Copiar código
-def verificar_estoque(estoque):
-    for item in range(len(estoque)):
-        print(f"Verificando estoque do item {item + 1}... ", end="")
-        if estoque[item] > 0:
-            print("Item disponível! Processando pedido...\n")
-            return item  # Retorna o índice do item disponível
-        else:
-            print("Estoque esgotado. Verificando próximo item.")
-    return -1  # Retorna -1 se nenhum item estiver disponível
-Complexidade: 
-𝑂
-(
-𝑚
-)
-O(m), onde 
-𝑚
-m é o número de itens no estoque.
 3. Laço Principal do Programa (While Loop):
 Este while controla o fluxo do programa, continuando enquanto o usuário quiser processar novos pedidos.
 
