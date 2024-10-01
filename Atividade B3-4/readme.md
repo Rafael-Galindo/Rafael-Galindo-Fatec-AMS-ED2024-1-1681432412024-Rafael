@@ -189,6 +189,41 @@ O(n + m + k \cdot (n + m))
 \]
 Esta função indica que o tempo de execução do sistema aumenta linearmente com o número de pedidos e itens no estoque, e a interação entre os pedidos e as verificações de estoque.
 
+\
+
+## Simplificação da Análise Big O do Código
+
+A análise Big O do código pode ser simplificada levando em consideração as operações mais significativas e como elas interagem entre si. Vamos revisar cada função e a complexidade total do sistema.
+
+### Funções Principais
+
+1. **`calcular_tempo_total(pedidos)`**
+   - **Complexidade:** \( O(n) \) onde \( n \) é o número de pedidos.
+   - **Resumo:** Esta função percorre todos os pedidos, resultando em uma complexidade linear.
+
+2. **`verificar_estoque(estoque)`**
+   - **Complexidade:** \( O(m) \) onde \( m \) é o número de itens no estoque.
+   - **Resumo:** Esta função verifica a disponibilidade dos itens no estoque, resultando em uma complexidade linear.
+
+3. **`main()`**
+   - **Complexidade Total do Laço Principal:**
+     - **Processamento de Pedidos:** \( O(k \cdot n) \) onde \( k \) é o número de iterações do laço principal e \( n \) é o número de pedidos processados em cada iteração.
+     - **Verificação de Estoque:** \( O(k \cdot m) \) onde \( m \) é o número de itens no estoque.
+
+### Complexidade Total
+
+A complexidade total do sistema é dada por:
+
+\[
+O(n + m + k \cdot (n + m))
+\]
+
+
+### Conclusão
+
+A simplificação da análise Big O mostra que o tempo de execução do sistema de gestão de pedidos aumenta linearmente com o número de pedidos e itens no estoque. Esta análise é útil para entender o desempenho do sistema e identificar áreas para otimização futura.
+
+
 # Conclusão
 
 A análise assintótica do nosso projeto de sistema de gestão de pedidos revela que a eficiência do código é crucial para a operação em ambientes com alta demanda. O uso de funções lineares e iterações permite que o sistema mantenha um desempenho adequado, mesmo com o crescimento da quantidade de pedidos e do estoque. Essa análise ajuda a identificar pontos de melhoria e otimização para o futuro.
