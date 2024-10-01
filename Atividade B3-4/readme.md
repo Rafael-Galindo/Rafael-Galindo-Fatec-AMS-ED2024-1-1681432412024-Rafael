@@ -83,6 +83,59 @@ A solução proposta consiste em um sistema que possui as seguintes característ
   - GitHub: Utilizado para controle de versão e colaboração entre os membros da equipe.
 
 
+# A) Evolução da Análise
+
+## Introdução à Análise Assintótica
+
+A análise assintótica é um método utilizado para descrever o comportamento de algoritmos em termos de tempo de execução e uso de memória à medida que a entrada cresce. Este conceito é fundamental no desenvolvimento de software eficiente.
+
+## Objetivos do Projeto
+
+O sistema de gestão de pedidos foi projetado para otimizar o atendimento ao cliente em restaurantes, processando pedidos e verificando a disponibilidade de itens no estoque.
+
+## Estrutura do Código
+
+O sistema utiliza iteração para processar pedidos e verificar o estoque, com laços de repetição e uma função recursiva, o que permite que o programa opere de forma eficiente e escalável.
+
+## Cenários de Execução
+
+- **Melhor Caso:** Quando há sempre itens disponíveis no estoque e o número de pedidos é pequeno, o tempo de execução é reduzido, pois o sistema rapidamente processa cada pedido.
+- **Pior Caso:** Ocorre quando o estoque está quase esgotado, exigindo várias verificações de estoque, ou quando o número de pedidos é elevado, aumentando o tempo total de processamento.
+
+## Crescimento das Funções
+
+À medida que o número de pedidos e a complexidade do menu aumentam, a análise deve considerar como a quantidade de pedidos e o tamanho do estoque afetam o desempenho do sistema.
+
+# B) Função Assintótica [Simplificação]
+
+Para simplificar a função assintótica do nosso projeto, analisaremos as partes mais críticas do código:
+
+## Funções Principais
+
+- **`calcular_tempo_total(pedidos):`** Esta função percorre todos os pedidos e calcula o tempo total.
+  - **Complexidade:** \(O(n)\), onde \(n\) é o número de pedidos.
+
+- **`verificar_estoque(estoque):`** Esta função percorre o estoque para verificar a disponibilidade de itens.
+  - **Complexidade:** \(O(m)\), onde \(m\) é o número de itens no estoque.
+
+- **`main():`** Esta função contém um laço while que continua processando pedidos até que não haja mais itens disponíveis ou o usuário decida parar.
+  - A complexidade total do laço depende do número de iterações que ele faz, que pode ser um número \(k\) de pedidos em cada iteração. Portanto, o tempo total do laço pode ser expresso como:
+  \[
+  O(k \cdot n) \text{ (para processar os pedidos)} + O(k \cdot m) \text{ (para verificar o estoque)} = O(k \cdot (n + m))
+  \]
+
+## Função Assintótica Final
+
+A complexidade total do sistema pode ser expressa como:
+\[
+O(n + m + k \cdot (n + m))
+\]
+Esta função indica que o tempo de execução do sistema aumenta linearmente com o número de pedidos e itens no estoque, e a interação entre os pedidos e as verificações de estoque.
+
+# Conclusão
+
+A análise assintótica do nosso projeto de sistema de gestão de pedidos revela que a eficiência do código é crucial para a operação em ambientes com alta demanda. O uso de funções lineares e iterações permite que o sistema mantenha um desempenho adequado, mesmo com o crescimento da quantidade de pedidos e do estoque. Essa análise ajuda a identificar pontos de melhoria e otimização para o futuro.
+
 
 
 ### Código em Python
