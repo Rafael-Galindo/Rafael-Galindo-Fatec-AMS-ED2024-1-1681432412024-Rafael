@@ -124,23 +124,32 @@ Para simplificar a função assintótica do nosso projeto, analisaremos as parte
   O(k \cdot n) \text{ (para processar os pedidos)} + O(k \cdot m) \text{ (para verificar o estoque)} = O(k \cdot (n + m))
   \]
 
+
 ## Pontos de Loop no Código
 
-### 1. Laço de Repetição para Processar Pedidos:
-Este laço `for` processa os pedidos iniciais, gerando um número aleatório de itens e calculando os tempos de preparo.
-```python
+##1. Laço de Repetição para Processar Pedidos:
+Este laço for processa os pedidos iniciais, gerando um número aleatório de itens e calculando os tempos de preparo.
+
+python
+Copiar código
 for i in range(num_pedidos):
     item_aleatorio = random.randint(0, 4)  # Seleciona aleatoriamente um item do menu
     pedido = menu[item_aleatorio]  # Atribui o tempo de preparo do item selecionado
     pedidos.append(pedido)
-    print(f"Pedido {i + 1}: tempo de preparo = {pedido} minutos")´´´
+    print(f"Pedido {i + 1}: tempo de preparo = {pedido} minutos")
+Complexidade: 
+𝑂
+(
+𝑛
+)
+O(n), onde 
+𝑛
+n é o número de pedidos.
+2. Laço de Verificação do Estoque:
+Este laço for percorre o estoque para verificar se há itens disponíveis.
 
-## Pontos de Loop no Código
-
-### 2. Laço de Verificação do Estoque:
-Este laço `for` percorre o estoque para verificar se há itens disponíveis, determinando se é possível processar mais pedidos. Cada item do estoque é verificado individualmente até que um item disponível seja encontrado ou todos os itens sejam verificados.
-
-```python
+python
+Copiar código
 def verificar_estoque(estoque):
     for item in range(len(estoque)):
         print(f"Verificando estoque do item {item + 1}... ", end="")
@@ -149,9 +158,69 @@ def verificar_estoque(estoque):
             return item  # Retorna o índice do item disponível
         else:
             print("Estoque esgotado. Verificando próximo item.")
-    return -1  # Retorna -1 se nenhum item estiver disponível´´´
+    return -1  # Retorna -1 se nenhum item estiver disponível
+Complexidade: 
+𝑂
+(
+𝑚
+)
+O(m), onde 
+𝑚
+m é o número de itens no estoque.
+3. Laço Principal do Programa (While Loop):
+Este while controla o fluxo do programa, continuando enquanto o usuário quiser processar novos pedidos.
 
+python
+Copiar código
+while continuar:
+    print("\nProcessando fila de pedidos:")
+    # processa os pedidos e verifica estoque
+    ...
+    continuar_input = input("\nDeseja continuar processando mais pedidos? (s/n): ")
+    if continuar_input.lower() != 's':
+        continuar = False
+    else:
+        num_pedidos = int(input("Digite o número de novos pedidos: "))
+Complexidade: A complexidade depende do número de iterações feitas, que depende do número de pedidos 
+𝑘
+k.
+Loops Identificados:
+Laço for de Processamento de Pedidos: 
+𝑂
+(
+𝑛
+)
+O(n)
+Laço for de Verificação de Estoque: 
+𝑂
+(
+𝑚
+)
+O(m)
+Laço while Principal: Depende da interação entre o número de pedidos 
+𝑘
+k e o estoque.
+Impacto na Complexidade Total:
+A complexidade total do sistema é 
+𝑂
+(
+𝑘
+⋅
+(
+𝑛
++
+𝑚
+)
+)
+O(k⋅(n+m)), onde:
 
+𝑘
+k é o número de iterações do laço principal,
+𝑛
+n é o número de pedidos processados,
+𝑚
+m é o número de itens verificados no estoque.
+Cada loop contribui para o comportamento assintótico final do programa, aumentando o tempo de execução conforme o número de pedidos e itens no estoque crescem.
 
 
 
