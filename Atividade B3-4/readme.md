@@ -126,7 +126,7 @@ Para simplificar a função assintótica do nosso projeto, analisaremos as parte
 
 
 
-##3. Laço Principal do Programa (While Loop):
+3. Laço Principal do Programa (While Loop):
 Este while controla o fluxo do programa, continuando enquanto o usuário quiser processar novos pedidos.
 
 while continuar:
