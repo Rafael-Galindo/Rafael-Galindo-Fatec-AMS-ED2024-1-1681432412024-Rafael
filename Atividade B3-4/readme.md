@@ -126,11 +126,9 @@ Para simplificar a função assintótica do nosso projeto, analisaremos as parte
 
 
 
-3. Laço Principal do Programa (While Loop):
+##3. Laço Principal do Programa (While Loop):
 Este while controla o fluxo do programa, continuando enquanto o usuário quiser processar novos pedidos.
 
-python
-Copiar código
 while continuar:
     print("\nProcessando fila de pedidos:")
     # processa os pedidos e verifica estoque
@@ -142,7 +140,7 @@ while continuar:
         num_pedidos = int(input("Digite o número de novos pedidos: "))
 Complexidade: A complexidade depende do número de iterações feitas, que depende do número de pedidos 
 𝑘
-k.
+
 Loops Identificados:
 Laço for de Processamento de Pedidos: 
 𝑂
@@ -157,8 +155,7 @@ Laço for de Verificação de Estoque:
 )
 O(m)
 Laço while Principal: Depende da interação entre o número de pedidos 
-𝑘
-k e o estoque.
+𝑘 e o estoque.
 Impacto na Complexidade Total:
 A complexidade total do sistema é 
 𝑂
@@ -173,7 +170,7 @@ A complexidade total do sistema é
 )
 O(k⋅(n+m)), onde:
 
-𝑘
+
 k é o número de iterações do laço principal,
 𝑛
 n é o número de pedidos processados,
