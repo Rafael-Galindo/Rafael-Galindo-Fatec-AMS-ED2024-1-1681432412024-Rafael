@@ -39,6 +39,19 @@ O código implementa um sistema de gerenciamento de pedidos utilizando Python. E
 4. **Atualização de Estoque:** Após o processamento de um pedido, o estoque é atualizado para refletir a quantidade disponível.
 5. **Repetição:** O sistema permite ao usuário continuar processando pedidos até que o estoque esgote ou o usuário decida parar.
 
+## Resumo do Fluxo do Programa
+O fluxo do programa é o seguinte:
+
+1. **Início:** O programa inicia e solicita ao usuário o número de pedidos, tempos de preparo dos itens do menu e quantidades em estoque.
+2. **Entrada de Dados:** O usuário insere os tempos de preparo dos itens e as quantidades em estoque.
+3. **Processamento de Pedidos:** O programa entra em um laço onde processa os pedidos, gerando pedidos aleatórios do menu e verificando a disponibilidade dos itens no estoque.
+4. **Verificação de Estoque:** Para cada pedido, o programa verifica se o item está disponível no estoque. Se disponível, o pedido é processado; se não, o programa informa que não há itens disponíveis.
+5. **Atualização do Estoque:** O estoque é atualizado após cada pedido processado.
+6. **Continuação:** O programa pergunta ao usuário se deseja continuar processando mais pedidos. Se sim, o laço recomeça; se não, o programa termina.
+7. **Cálculo do Tempo Total:** Após o término dos pedidos, o programa calcula e exibe o tempo total de preparo dos pedidos.
+8. **Fim:** O programa finaliza.
+
+
 ## Macro Solução
 A solução proposta consiste em um sistema que possui as seguintes características:
 
