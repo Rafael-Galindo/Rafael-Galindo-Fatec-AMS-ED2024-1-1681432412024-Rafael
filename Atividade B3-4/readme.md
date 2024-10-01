@@ -124,6 +124,38 @@ Para simplificar a função assintótica do nosso projeto, analisaremos as parte
   O(k \cdot n) \text{ (para processar os pedidos)} + O(k \cdot m) \text{ (para verificar o estoque)} = O(k \cdot (n + m))
   \]
 
+## Pontos de Loop no Código
+
+### 1. Laço de Repetição para Processar Pedidos:
+Este laço `for` processa os pedidos iniciais, gerando um número aleatório de itens e calculando os tempos de preparo.
+```python
+for i in range(num_pedidos):
+    item_aleatorio = random.randint(0, 4)  # Seleciona aleatoriamente um item do menu
+    pedido = menu[item_aleatorio]  # Atribui o tempo de preparo do item selecionado
+    pedidos.append(pedido)
+    print(f"Pedido {i + 1}: tempo de preparo = {pedido} minutos")´´´
+
+## Pontos de Loop no Código
+
+### 2. Laço de Verificação do Estoque:
+Este laço `for` percorre o estoque para verificar se há itens disponíveis, determinando se é possível processar mais pedidos. Cada item do estoque é verificado individualmente até que um item disponível seja encontrado ou todos os itens sejam verificados.
+
+```python
+def verificar_estoque(estoque):
+    for item in range(len(estoque)):
+        print(f"Verificando estoque do item {item + 1}... ", end="")
+        if estoque[item] > 0:
+            print("Item disponível! Processando pedido...\n")
+            return item  # Retorna o índice do item disponível
+        else:
+            print("Estoque esgotado. Verificando próximo item.")
+    return -1  # Retorna -1 se nenhum item estiver disponível´´´
+
+
+
+
+
+
 ## Função Assintótica Final
 
 A complexidade total do sistema pode ser expressa como:
