@@ -84,64 +84,48 @@ O código é um sistema simples para gerenciar pedidos em um restaurante, utiliz
 import random
 
 def calcular_tempo_total(pedidos):
-    total = 0
-    for tempo in pedidos:
-        total += tempo
-    return total
+    return sum(pedidos)
 
 def verificar_estoque(estoque):
-    for item in range(len(estoque)):
-        print(f"Verificando estoque do item {item + 1}... ", end="")
-        if estoque[item] > 0:
-            print("Item disponível! Processando pedido...\n")
-            return item  # Retorna o índice do item disponível
-        else:
-            print("Estoque esgotado. Verificando próximo item.")
+    for i, item in enumerate(estoque):
+        if item > 0:
+            return i  # Retorna o índice do primeiro item disponível
     return -1  # Retorna -1 se nenhum item estiver disponível
 
 def main():
     random.seed()  # Inicializa o gerador de números aleatórios
 
-    num_pedidos = int(input("Digite o número de pedidos: "))
+    num_pedidos = int(input("Digite o número inicial de pedidos: "))
+    menu = [int(input(f"Digite o tempo de preparo do item {i + 1} (em minutos): ")) for i in range(5)]
+    estoque = [int(input(f"Digite a quantidade em estoque do item {i + 1}: ")) for i in range(5)]
+
     pedidos = []
-    menu = []
-    estoque = []
 
-    # Entrada de dados do menu
-    print("\nDigite os tempos de preparo dos 5 itens do menu (em minutos):")
-    for i in range(5):
-        tempo = int(input(f"Tempo de preparo do item {i + 1}: "))
-        menu.append(tempo)
+    while True:
+        print("\nProcessando pedidos:")
+        for _ in range(num_pedidos):
+            item_index = random.randint(0, 4)  # Seleciona aleatoriamente um item do menu
+            if estoque[item_index] > 0:  # Verifica se o item está disponível
+                pedidos.append(menu[item_index])
+                estoque[item_index] -= 1
+                print(f"Pedido processado: tempo de preparo = {menu[item_index]} minutos")
+            else:
+                print(f"Item {item_index + 1} esgotado!")
 
-    # Entrada de dados do estoque
-    print("\nDigite as quantidades em estoque dos 5 itens do menu:")
-    for i in range(5):
-        quantidade = int(input(f"Quantidade em estoque do item {i + 1}: "))
-        estoque.append(quantidade)
+        if verificar_estoque(estoque) == -1:
+            print("Nenhum item disponível no estoque.")
+            break
 
-    # Processando pedidos
-    print("\nProcessando fila de pedidos:")
-    for i in range(num_pedidos):
-        pedido = menu[random.randint(0, 4)]  # Atribui tempos de preparo aleatórios do menu
-        pedidos.append(pedido)
-        print(f"Pedido {i + 1}: tempo de preparo = {pedido} minutos")
+        continuar = input("Deseja continuar processando mais pedidos? (s/n): ")
+        if continuar.lower() != 's':
+            break
+        num_pedidos = int(input("Digite o número de novos pedidos: "))
 
-    # Verificando o menu
-    print("\nVerificando o menu:")
-    for j in range(5):
-        print(f"Item {j + 1}: tempo de preparo = {menu[j]} minutos")
-
-    # Verificando estoque
-    print("\nVerificando estoque para o próximo pedido:")
-    item_disponivel = verificar_estoque(estoque)
-    if item_disponivel == -1:
-        print("Nenhum item disponível no estoque.\n")
-
-    # Calculando o tempo total de preparo
     total_tempo = calcular_tempo_total(pedidos)
     print(f"\nTempo total de preparo dos pedidos: {total_tempo} minutos")
 
 if __name__ == "__main__":
-    main()´´´
+    main()
+´´´
 
 
