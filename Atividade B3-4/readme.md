@@ -9,6 +9,21 @@
 ## Descrição de Negócio
 O Sistema de Gerenciamento de Pedidos foi desenvolvido para otimizar o atendimento ao cliente em um ambiente de restaurante. A proposta é permitir que os operadores do restaurante gerenciem pedidos de forma eficiente, garantindo a verificação do estoque e o cálculo do tempo de preparo dos itens do menu. O sistema é interativo e permite a entrada de dados em tempo real, proporcionando uma experiência fluida tanto para os operadores quanto para os clientes.
 
+
+## Problema Proposto/Solução Proposta
+
+Este projeto foi desenvolvido para atender a um problema comum enfrentado por restaurantes: **a gestão eficiente dos pedidos e do estoque**. O sistema permite que os restaurantes processem pedidos de forma organizada e monitorem a disponibilidade dos itens no estoque, evitando atrasos no atendimento e a insatisfação dos clientes.
+
+As principais questões que o sistema busca resolver incluem:
+
+1. **Eficiência no Atendimento:** Automatizar o processo de recebimento e processamento de pedidos, reduzindo o tempo de espera para os clientes.
+2. **Gestão do Estoque:** Permitir que os gerentes de restaurante verifiquem rapidamente a disponibilidade dos itens, evitando vendas de produtos esgotados.
+3. **Planejamento de Preparo:** Proporcionar uma visão clara do tempo de preparo total dos pedidos, facilitando a programação da equipe de cozinha.
+
+Dessa forma, o sistema contribui para um atendimento mais ágil e eficiente, aumentando a satisfação do cliente e melhorando a operação do restaurante.
+
+
+
 ## Requisitos do Sistema
 ### Funcionais
 1. **Entrada de Dados:**
