@@ -2,9 +2,9 @@
 
 ## Componentes da Equipe
 - Rafael Willian Galindo Neto
-- [Nome do Outro Integrante 1]
-- [Nome do Outro Integrante 2]
-- [Nome do Outro Integrante 3]
+- [Murilo Grillo Bastos]
+- [Vitor Tamais Fischer]
+- [Giovanni Montteiro]
 
 ## Descrição de Negócio
 O Sistema de Gerenciamento de Pedidos foi desenvolvido para otimizar o atendimento ao cliente em um ambiente de restaurante. A proposta é permitir que os operadores do restaurante gerenciem pedidos de forma eficiente, garantindo a verificação do estoque e o cálculo do tempo de preparo dos itens do menu. O sistema é interativo e permite a entrada de dados em tempo real, proporcionando uma experiência fluida tanto para os operadores quanto para os clientes.
